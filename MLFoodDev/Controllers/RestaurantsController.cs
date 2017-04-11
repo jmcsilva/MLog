@@ -12,18 +12,17 @@ namespace MLFoodDev.Controllers
         private List<Restaurant> restList = new List<Restaurant>();
 
         // GET: Restaurants
-        public ActionResult Index()
+        public ActionResult List()
         {
+            string userLatitude = "-33.897840";
+            string userLongitude = "151.178905";
             Restaurant rest = new Restaurant();
             List<Restaurant> rests = rest.GetListRestaurants();
-            return View(rests);
-        }
 
-        //public ActionResult List()
-        //{
-        //    Restaurant rest = new Restaurant();
-        //    List<Restaurant> rests = rest.GetListRestaurants();
-        //    return View(rests);
-        //}
+            List<Restaurant> sortedlist = Helper.SortList(rests, userLatitude, userLongitude);
+
+            return View(sortedlist);
+        }
+        
     }
 }

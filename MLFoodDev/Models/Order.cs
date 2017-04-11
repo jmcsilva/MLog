@@ -9,6 +9,7 @@ namespace MLFoodDev.Models
     {
         public int OrderID { get; set; }
         public DateTime OrderDate { get; set; }
-        public float Total { get; set; }
+        public decimal Total { get; set; }
+
     }
 }

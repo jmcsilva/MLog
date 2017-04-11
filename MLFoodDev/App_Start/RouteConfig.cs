@@ -16,7 +16,7 @@ namespace MLFoodDev
             routes.MapRoute(
                name: "Restaurants",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Restaurants", action = "List", id = UrlParameter.Optional }
+               defaults: new { controller = "Restaurants", action = "Index", id = UrlParameter.Optional }
            );
 
             routes.MapRoute(

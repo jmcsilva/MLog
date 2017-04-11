@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MLFoodDev.Models.Restaurant>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Restaurants</h2>
+<h4>Your Coords: -33.897840, 151.178905</h4>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover sortable">
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
+        }
+        else
+        {
+            <thead>
+                <tr class="success">
+                    <th> Restaurant</th>
+                    <th>Suburb</th>
+                    <th>Rating</th>
+                    <th>Orders on the last 2 months</th>
+                    <th>Average Value Total Orders</th>
+                    <th>Distance</th>
+                </tr>
+            </thead>
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Suburb.Name</td>
+                    <td>@item.Rating</td>
+                    <td>@item.AgeDateRanking</td>
+                    <td>@item.AverageTotalOrder</td>
+                    <td>@item.DistancetoUser</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+  
+
